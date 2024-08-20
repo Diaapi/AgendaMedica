@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="MedicalDate.View.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    utu:StatusBar.Background="{ThemeResource Background}"
+    utu:StatusBar.Foreground="Auto"
+    Background="{ThemeResource Background}"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Width="300"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TextBox
+            x:Name="txtemail"
+            Margin="0,0,0,5"
+            PlaceholderText="Correo Electronico"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <PasswordBox
+            x:Name="txtpass"
+            Margin="0,0,0,5"
+            PlaceholderText="Clave"
+            Style="{StaticResource CupertinoPasswordBoxStyle}" />
+        <HyperlinkButton
+            x:Name="btnforgot"
+            HorizontalAlignment="Right"
+            Click="btnforgot_Click"
+            Content="Se le olvido su clave?"
+            Style="{StaticResource CupertinoHyperlinkButtonStyle}" />
+        <Button
+            x:Name="btnlogin"
+            Margin="0,5,0,5"
+            HorizontalAlignment="Center"
+            Click="btnlogin_Click"
+            Content="Login"
+            Foreground="{ThemeResource TextColor}"
+            Style="{StaticResource CupertinoButtonStyle}" />
+        <HyperlinkButton
+            x:Name="btnregister"
+            HorizontalAlignment="Center"
+            Click="btnregister_Click"
+            Content="Register"
+            Style="{StaticResource CupertinoHyperlinkButtonStyle}" />
+    </StackPanel>
+</Page>

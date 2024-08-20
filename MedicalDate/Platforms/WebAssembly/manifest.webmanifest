@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MedicalDate",
+  "display": "standalone",
+  "name": "MedicalDate",
+  "short_name": "MedicalDate",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

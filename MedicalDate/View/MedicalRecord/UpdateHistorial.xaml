@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="MedicalDate.View.MedicalRecord.UpdateHistorial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View.MedicalRecord"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <StackPanel Width="300">
+        <TextBlock Margin="0,0,0,5" Text="Doctor" />
+        <ComboBox
+            x:Name="combodoc"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoComboBoxStyle}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Margin="0,0,0,5" Text="Paciente" />
+        <ComboBox
+            x:Name="combopac"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoComboBoxStyle}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Margin="0,0,0,5" Text="Diagnostico" />
+        <TextBox
+            x:Name="txtdiagnosis"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Tratamiento" />
+        <TextBox
+            x:Name="txttreatment"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Notas" />
+        <TextBox
+            x:Name="txtnote"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Fecha de visita" />
+        <CalendarDatePicker
+            x:Name="date"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoCalendarDatePickerStyle}" />
+        <Button
+            x:Name="btnupdate"
+            HorizontalAlignment="Center"
+            Click="btnupdate_Click"
+            Content="Actualizar"
+            Style="{StaticResource CupertinoButtonStyle}" />
+    </StackPanel>
+</Page>

@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="MedicalDate.View.ForgotPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    utu:StatusBar.Background="{ThemeResource Background}"
+    utu:StatusBar.Foreground="Auto"
+    Background="{ThemeResource Background}"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Width="300"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TextBox
+            x:Name="txtemail"
+            Margin="0,0,0,5"
+            PlaceholderText="Correo Electronico"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <Button
+            x:Name="btnsend"
+            HorizontalAlignment="Center"
+            Click="btnsend_Click"
+            Content="Enviar"
+            Foreground="{ThemeResource TextColor}"
+            Style="{StaticResource CupertinoButtonStyle}" />
+    </StackPanel>
+</Page>

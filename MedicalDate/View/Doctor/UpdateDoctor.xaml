@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="MedicalDate.View.Doctor.UpdateDoctor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View.Doctor"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Width="300"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TextBlock Margin="0,0,0,5" Text="Nombre y apellido" />
+        <TextBox
+            x:Name="txtname"
+            Margin="0,0,0,5"
+            PlaceholderText="Carlos suarez"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Especialidad" />
+        <TextBox
+            x:Name="txtspecial"
+            Margin="0,0,0,5"
+            PlaceholderText="Cardiologo"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Telefono" />
+        <TextBox
+            x:Name="txtphone"
+            Margin="0,0,0,5"
+            InputScope="TelephoneLocalNumber"
+            PlaceholderText="+52 555-123-4567"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Correo Electronico" />
+        <TextBox
+            x:Name="txtemail"
+            Margin="0,0,0,5"
+            PlaceholderText="carlos@gmail.com"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <Button
+            x:Name="btnupdate"
+            HorizontalAlignment="Center"
+            Click="btnupdate_Click"
+            Content="Actualizar"
+            Style="{StaticResource CupertinoButtonStyle}" />
+    </StackPanel>
+</Page>

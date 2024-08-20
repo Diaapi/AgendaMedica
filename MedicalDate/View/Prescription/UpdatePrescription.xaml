@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="MedicalDate.View.Prescription.UpdatePrescription"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View.Prescription"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Width="300"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <TextBlock Margin="0,0,0,5" Text="Paciente" />
+        <ComboBox
+            x:Name="combopac"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoComboBoxStyle}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Margin="0,0,0,5" Text="Dosis" />
+        <TextBox
+            x:Name="txtdosage"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Instrucciones" />
+        <TextBox
+            x:Name="txtinstruction"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <TextBlock Margin="0,0,0,5" Text="Medicamentos" />
+        <TextBox
+            x:Name="txtmedication"
+            Margin="0,0,0,5"
+            Style="{StaticResource CupertinoTextBoxStyle}" />
+        <Button
+            x:Name="btnupdate"
+            HorizontalAlignment="Center"
+            Click="btnupdate_Click"
+            Content="Actualizar"
+            Style="{StaticResource CupertinoButtonStyle}" />
+    </StackPanel>
+</Page>

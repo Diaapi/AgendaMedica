@@ -1,0 +1,120 @@
+﻿<Page
+    x:Class="MedicalDate.View.Patient.Patient"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MedicalDate.View.Patient"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    Background="{ThemeResource Background}"
+    mc:Ignorable="d">
+
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <utu:NavigationBar Background="{ThemeResource NavBackground}">
+            <utu:NavigationBar.Content>
+                <AutoSuggestBox
+                    x:Name="txtsearch"
+                    Width="300"
+                    Margin="0,0,0,5"
+                    HorizontalAlignment="Center"
+                    PlaceholderText="Search"
+                    SuggestionChosen="txtsearch_SuggestionChosen"
+                    TextChanged="txtsearch_TextChanged">
+                    <AutoSuggestBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="0,0,5,0" Text="{Binding Name}" />
+                        </DataTemplate>
+                    </AutoSuggestBox.ItemTemplate>
+                </AutoSuggestBox>
+            </utu:NavigationBar.Content>
+            <utu:NavigationBar.PrimaryCommands>
+                <AppBarButton x:Name="btnopen" Icon="Add">
+                    <AppBarButton.Flyout>
+                        <Flyout>
+                            <StackPanel Width="300">
+                                <TextBlock Margin="0,0,0,5" Text="Nombre y apellido" />
+                                <TextBox
+                                    x:Name="txtname"
+                                    Margin="0,0,0,5"
+                                    PlaceholderText="Carlos Suarez"
+                                    Style="{StaticResource CupertinoTextBoxStyle}" />
+                                <TextBlock Margin="0,0,0,5" Text="Telefono" />
+                                <TextBox
+                                    x:Name="txtphone"
+                                    Margin="0,0,0,5"
+                                    InputScope="TelephoneLocalNumber"
+                                    PlaceholderText="+52 555-123-4567"
+                                    Style="{StaticResource CupertinoTextBoxStyle}" />
+                                <TextBlock Margin="0,0,0,5" Text="Correo Electronico" />
+                                <TextBox
+                                    x:Name="txtemail"
+                                    Margin="0,0,0,5"
+                                    PlaceholderText="carlos@gmail.com"
+                                    Style="{StaticResource CupertinoTextBoxStyle}" />
+                                <TextBlock Margin="0,0,0,5" Text="Direccion" />
+                                <TextBox
+                                    x:Name="txtaddress"
+                                    Margin="0,0,0,5"
+                                    PlaceholderText="escriba la direccion aqui"
+                                    Style="{StaticResource CupertinoTextBoxStyle}" />
+                                <TextBlock Margin="0,0,0,5" Text="Fecha de cumpleanos" />
+                                <CalendarDatePicker
+                                    x:Name="date"
+                                    Margin="0,0,0,5"
+                                    Style="{StaticResource CupertinoCalendarDatePickerStyle}" />
+                                <Button
+                                    x:Name="btnadd"
+                                    HorizontalAlignment="Center"
+                                    Click="btnadd_Click"
+                                    Content="Agregar"
+                                    Style="{StaticResource CupertinoButtonStyle}" />
+                            </StackPanel>
+                        </Flyout>
+                    </AppBarButton.Flyout>
+                </AppBarButton>
+            </utu:NavigationBar.PrimaryCommands>
+        </utu:NavigationBar>
+        <ListView x:Name="list" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel.ContextFlyout>
+                            <MenuBarItemFlyout>
+                                <MenuFlyoutSubItem Icon="Send" Text="Compartir">
+                                    <MenuFlyoutItem
+                                        x:Name="btnshare"
+                                        Click="btnshare_Click"
+                                        Text="Whatsapp" />
+                                    <MenuFlyoutItem
+                                        x:Name="btnmail"
+                                        Click="btnmail_Click"
+                                        Text="Correo Electronico" />
+                                    <MenuFlyoutItem
+                                        x:Name="btnsms"
+                                        Click="btnsms_Click"
+                                        Text="SMS" />
+                                </MenuFlyoutSubItem>
+                                <MenuFlyoutItem
+                                    x:Name="btndelete"
+                                    Click="btndelete_Click"
+                                    Text="Eliminar" />
+                                <MenuFlyoutItem
+                                    x:Name="btnupdate"
+                                    Click="btnupdate_Click"
+                                    Text="Actualizar" />
+                            </MenuBarItemFlyout>
+                        </StackPanel.ContextFlyout>
+                        <TextBlock
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
